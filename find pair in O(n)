@@ -1,0 +1,42 @@
+package studydsa;
+
+public class Find_Pair_BigO_of_n {
+    public static void main(String[] args) {
+        int[] arr = {2,4,4,1,3};
+        int n = 5;
+        int find;
+        int i;
+
+        for (i = 0; i < n; i++) {
+            if (arr[i]<0){
+                int plus1 = arr[i];
+                plus1 = (plus1-(plus1+plus1));
+                find = plus1;
+                --find;
+
+                int minus1 = arr[find];
+                if (arr[find]<0){
+                    int count = 1;
+                    count++;
+                    int plus2 = arr[i];
+                    plus2 = (plus2-(plus2+plus2));
+                    System.out.println("There is Pair of : "+plus2);
+                }else{
+                    arr[find] = (minus1-(minus1+minus1));
+                }
+
+            }else{
+                find = arr[i];
+                find--;
+
+                if (arr[find] < 0){
+                    System.out.println("There is Pair of : "+arr[i]);
+                }
+                else{
+                    int minus1 = arr[find];
+                    arr[find] = (minus1-(minus1+minus1));
+                }
+            }
+        }
+    }
+}
